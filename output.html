@@ -1,0 +1,37 @@
+<style>
+*{
+	font-family: "Arial";
+	font-size: 11pt;
+}
+h1{
+	font-size: 14pt;
+	text-align: center;
+}
+h2{
+	font-size: 12pt;
+	text-decoration: underline;
+}
+
+</style>
+{% for day in days %}
+	<h1>#{{day.index0}}</h1>
+	{% for show in day.shows %}
+		<h2>{{show.title}}</h2>
+		[gallery link="file" columns="2" size="medium" ids="XXXXX,XXXXX"]<br />
+		<b>Short Synopsis</b>: {{show.synopsis}}
+		<br /><br />
+		
+		{% for author in author_block %}
+		<span style="color:#{{author.color}}"><b>{{author.html}}</b></span><br />
+		{% endfor %}
+		<br />
+		
+		<b>&lt;Author 1:&gt</b> [text]<br />
+		<p>Potential:</b><br />
+		<br />
+		
+		<b>&lt;Author 2:&gt</b> [text]
+		<p>Potential:</b><br />
+	{% endfor %}
+
+{% endfor %}
