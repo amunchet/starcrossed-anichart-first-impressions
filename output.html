@@ -3,35 +3,39 @@
 	font-family: "Arial";
 	font-size: 11pt;
 }
-h1{
+.h1{
 	font-size: 14pt;
 	text-align: center;
+	font-weight: bold;
 }
-h2{
+.h2{
 	font-size: 12pt;
 	text-decoration: underline;
+	font-weight: bold;
 }
 
 </style>
 {% for day in days %}
-	<h1>#{{day.index0}}</h1>
-	{% for show in day.shows %}
-		<h2>{{show.title}}</h2>
+	<div class="h1">#{{loop.index}}</div><br />
+	{% for show in day[1] %}
+		<div class="h2">{{show.title}}</div>
 		[gallery link="file" columns="2" size="medium" ids="XXXXX,XXXXX"]<br />
 		<b>Short Synopsis</b>: {{show.synopsis}}
 		<br /><br />
 		
 		{% for author in author_block %}
-		<span style="color:#{{author.color}}"><b>{{author.html}}</b></span><br />
+		<span style="color:#{{author.color}}"><b>{{author.html}}</b></span> [text]
+		<br />
 		{% endfor %}
 		<br />
 		
 		<b>&lt;Author 1:&gt</b> [text]<br />
-		<p>Potential:</b><br />
+		<b>Potential:</b><br />
 		<br />
 		
-		<b>&lt;Author 2:&gt</b> [text]
-		<p>Potential:</b><br />
+		<b>&lt;Author 2:&gt</b> [text]<br />
+		<b>Potential:</b><br />
+		<br /><br />
 	{% endfor %}
 
 {% endfor %}

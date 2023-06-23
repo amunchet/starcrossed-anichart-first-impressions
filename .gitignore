@@ -1,2 +1,4 @@
 venv/**
 output.json
+render.html
+__pycache__/**
